@@ -1,3 +1,145 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #f6f6fe;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 20px;
+}
+
+.toggle-switch-background:hover {
+  opacity: 0.6;
+}
+
+.toggle-switch-handle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -35px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aaa;
+  transition: color 0.3s ease-in-out;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+  transform: translateX(45px);
+}
+
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+  content: "On";
+  right: -15px;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
+  transform: translateX(40px);
+}
+
+.card-price-white {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  padding: 32px;
+  background-color: white;
+  border-radius: 8px;
+  color : #6d708d;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 48px;
+}
+
+.card-price-white > p {
+  color: #494c5f;
+}
+
+.card-price-white > button {
+  padding: 1px;
+  color: white;
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.card-price-white > button:hover > div {
+  background: white;
+}
+
+.card-price-white > button:hover > div > span {
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-price-violet {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  padding: 48px 32px 48px 32px;
+  background: linear-gradient(145deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 8px;
+  color : #f6f6fe;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 48px;
+}
+
+.card-price-violet > p {
+  color: white;
+}
+
+.card-price-violet > button {
+  border: 1px solid white;
+  background: white;
+}
+
+.card-price-violet > button > div {
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-price-violet > button:hover {
+  background: transparent;
+}
+
+.card-price-violet > button:hover > div > span {
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
